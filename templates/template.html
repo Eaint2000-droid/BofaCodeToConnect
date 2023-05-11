@@ -149,8 +149,6 @@
 
     <div class="container">
 
-        <!-- <p>This is a paragraph of text inside a container.</p> -->
-
         <div class="table-container">
             <table id="data-table3">
                 <thead>
@@ -196,6 +194,72 @@
                 .catch(error => console.error(error));
         </script>
     </div>
+
+    <div class="container" style="margin-top: 30px">
+        <h3> Pricing Engine </h3>
+    </div>
+    
+    <div class="container">
+        <div class="table-container">
+            <table id="data-table4">
+                <thead>
+                    <tr>
+                        <th>Event ID </th>
+                        <th>Currency </th>
+                        <th>Tenor </th>
+                        <th>Position </th>
+                        <th>Bid </th>
+                        <th>Ask </th>
+                        <th>Quote Status </th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+        </div>
+
+        <script>
+            fetch("./static/sample_output.json")
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody4 = document.querySelector("#data-table4 tbody");
+
+                    data.forEach((item, index) => {
+                            setTimeout(() => {
+                                const row = document.createElement("tr");
+                                 // Add a CSS class based on the value of "QuoteStatus"
+                switch (item.QuoteStatus) {
+                    case "EXCEPTION":
+                        row.classList.add("exception-row");
+                        break;
+                    case "TRADABLE":
+                        row.classList.add("tradable-row");
+                        break;
+                    case "NON-TRADABLE":
+                        row.classList.add("non-tradable-row");
+                        break;
+                    default:
+                        break;
+                }
+
+                                row.innerHTML = `
+                                    <td>${item.EventId}</td>
+                                    <td>${item.Ccy}</td>
+                                    <td>${item.Tenor}</td>
+                                    <td>${item.Position}</td>
+                                    <td>${item.Bid}</td>
+                                    <td>${item.Ask}</td>
+                                    <td>${item.QuoteStatus}</td>
+                                `;
+                                tableBody4.appendChild(row);
+                            }, 1000 * index); // add a delay of 1 second (1000 milliseconds) for each row
+                        });
+                })
+                .catch(error => console.error(error));
+        </script>
+    </div>
+
 </body>
 
 </html>

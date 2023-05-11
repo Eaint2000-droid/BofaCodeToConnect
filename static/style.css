@@ -21,7 +21,7 @@ body {
 }
 
 .container {
-  background-color: #f2f2f2;
+  background-color: #ffffff;
   padding: 20px;
   width: 100%;
   display: flex;
@@ -51,4 +51,17 @@ table, th, td {
 
 .table-container table {
     margin-right: 20px;
+}
+
+/* Example CSS rules */
+.exception-row {
+    background-color: red;
+}
+
+.tradable-row {
+    background-color: green;
+}
+
+.non-tradable-row {
+    background-color: yellow;
 }

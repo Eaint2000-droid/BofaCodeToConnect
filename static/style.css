@@ -1,0 +1,54 @@
+
+/* Css files (Like this one) are where all the designing of the website is kept. */
+
+h1,
+h2,
+h3,
+h4,
+p {
+    font-family: verdana;
+}
+
+body {
+    display: inline;
+    font-family: verdana;
+    background-color: #002453;
+    color:#eef6ff
+}
+
+:root {
+    color: #d5e0e7;
+}
+
+.container {
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+}
+
+h3{
+    color:black
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    color: black
+  }
+
+  .table {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.table-container {
+    display: flex;
+    max-height: 300px; /* Set the desired height */
+    overflow: auto; /* Enable scrolling */
+}
+
+.table-container table {
+    margin-right: 20px;
+}

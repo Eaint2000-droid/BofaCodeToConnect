@@ -12,10 +12,9 @@
         <center>
             <h1 style="font-family:verdana;">FICC Trade Challenge</h1>
         </center>
-
     </div>
 
-
+  <!-- Market Data Producer Component -->
     <div class="container">
         <h3 style="color: black"> Market Data Producer</h3>
     </div>
@@ -52,8 +51,9 @@
             </table>
         </div>
 
+        <!-- Fetch data related to the FXMidEvent and ConfigEvent  -->
         <script>
-            fetch("./static/sample_events.json")
+            fetch("./static/events.json")
                 .then(response => response.json())
                 .then(data => {
                     const tableBody1 = document.querySelector("#data-table1 tbody");
@@ -70,7 +70,7 @@
                                     <td>${item.rate}</td>
                                 `;
                                 tableBody1.appendChild(row);
-                            }, index * 1000); // delay 1 second between each row
+                            }, index * 2000); // delay 1 second between each row
 
                         });
 
@@ -97,6 +97,7 @@
 
     </div>
 
+    <!-- Trade Event Data Producer Component -->
     <div class="container" style="margin-top: 30px">
         <h3> Trade Event Data Producer</h3>
     </div>
@@ -119,11 +120,12 @@
                 <tbody>
                 </tbody>
             </table>
-
         </div>
 
+        
+        <!-- Fetch data related to the TradeEvent -->
         <script>
-            fetch("./static/sample_events.json")
+            fetch("./static/events.json")
                 .then(response => response.json())
                 .then(data => {
                     const tableBody3 = document.querySelector("#data-table3 tbody");
@@ -142,13 +144,14 @@
                                     <td>${item.TradeId}</td>
                                 `;
                                 tableBody3.appendChild(row);
-                            }, 1000 * index); // add a delay of 1 second (1000 milliseconds) for each row
+                            }, 2000 * index); // add a delay of 1 second (1000 milliseconds) for each row
                         });
                 })
                 .catch(error => console.error(error));
         </script>
     </div>
 
+    <!-- Pricing Engine Component -->
     <div class="container" style="margin-top: 30px">
         <h3> Pricing Engine </h3>
     </div>
@@ -173,6 +176,7 @@
 
         </div>
 
+        <!-- Fetch data related to the output result after calculation  -->
         <script>
             fetch("./static/sample_output.json")
                 .then(response => response.json())
@@ -182,7 +186,7 @@
                     data.forEach((item, index) => {
                         setTimeout(() => {
                             const row = document.createElement("tr");
-                            // Add a CSS class based on the value of "QuoteStatus"
+                            // Add CSS rules to colour each row according to the quote status
                             switch (item.QuoteStatus) {
                                 case "EXCEPTION":
                                     row.classList.add("exception-row");
@@ -207,7 +211,7 @@
                                     <td>${item.QuoteStatus}</td>
                                 `;
                             tableBody4.appendChild(row);
-                        }, 1000 * index); // add a delay of 1 second (1000 milliseconds) for each row
+                        },  index * 2000); // add a delay of 1 second (1000 milliseconds) for each row
                     });
                 })
                 .catch(error => console.error(error));

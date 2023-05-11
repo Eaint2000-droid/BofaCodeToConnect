@@ -11,8 +11,6 @@
     <div>
         <center>
             <h1 style="font-family:verdana;">FICC Trade Challenge</h1>
-            <!-- <p>Note how these are defined under templates/template.html and dont need to be repeted on each and every
-                page</p> -->
         </center>
 
     </div>
@@ -52,51 +50,7 @@
                 <tbody>
                 </tbody>
             </table>
-            <!-- <div style="width:25%">
-                <canvas id="rate-chart"></canvas>
-            </div> -->
-
-
         </div>
-
-        <!-- <script>
-            fetch("./static/sample_events.json")
-                .then(response => response.json())
-                .then(data => {
-                    // Filter the data to get only FxMidEvent events with Ccy = "GBX"
-                    const fxEvents = data.filter(item => item.EventType === "FxMidEvent" && item.Ccy === "GBX");
-
-                    // Extract the Event IDs and Rates into separate arrays
-                    const eventIds = fxEvents.map(item => item.EventId);
-                    const rates = fxEvents.map(item => item.rate[0].rate); // extract the first rate value for each event
-
-                    // Create a new chart using Chart.js
-                    const ctx = document.getElementById("rate-chart").getContext("2d");
-                    const chart = new Chart(ctx, {
-                        type: "bar",
-                        data: {
-                            labels: eventIds,
-                            datasets: [{
-                                label: "Rates",
-                                data: rates,
-                                backgroundColor: "rgba(255, 99, 132, 0.2)",
-                                borderColor: "rgba(255, 99, 132, 1)",
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            scales: {
-                                yAxes: [{
-                                    ticks: {
-                                        beginAtZero: true
-                                    }
-                                }]
-                            }
-                        }
-                    });
-                })
-                .catch(error => console.error(error));
-        </script> -->
 
         <script>
             fetch("./static/sample_events.json")
@@ -198,7 +152,7 @@
     <div class="container" style="margin-top: 30px">
         <h3> Pricing Engine </h3>
     </div>
-    
+
     <div class="container">
         <div class="table-container">
             <table id="data-table4">
@@ -226,24 +180,24 @@
                     const tableBody4 = document.querySelector("#data-table4 tbody");
 
                     data.forEach((item, index) => {
-                            setTimeout(() => {
-                                const row = document.createElement("tr");
-                                 // Add a CSS class based on the value of "QuoteStatus"
-                switch (item.QuoteStatus) {
-                    case "EXCEPTION":
-                        row.classList.add("exception-row");
-                        break;
-                    case "TRADABLE":
-                        row.classList.add("tradable-row");
-                        break;
-                    case "NON-TRADABLE":
-                        row.classList.add("non-tradable-row");
-                        break;
-                    default:
-                        break;
-                }
+                        setTimeout(() => {
+                            const row = document.createElement("tr");
+                            // Add a CSS class based on the value of "QuoteStatus"
+                            switch (item.QuoteStatus) {
+                                case "EXCEPTION":
+                                    row.classList.add("exception-row");
+                                    break;
+                                case "TRADABLE":
+                                    row.classList.add("tradable-row");
+                                    break;
+                                case "NON-TRADABLE":
+                                    row.classList.add("non-tradable-row");
+                                    break;
+                                default:
+                                    break;
+                            }
 
-                                row.innerHTML = `
+                            row.innerHTML = `
                                     <td>${item.EventId}</td>
                                     <td>${item.Ccy}</td>
                                     <td>${item.Tenor}</td>
@@ -252,9 +206,9 @@
                                     <td>${item.Ask}</td>
                                     <td>${item.QuoteStatus}</td>
                                 `;
-                                tableBody4.appendChild(row);
-                            }, 1000 * index); // add a delay of 1 second (1000 milliseconds) for each row
-                        });
+                            tableBody4.appendChild(row);
+                        }, 1000 * index); // add a delay of 1 second (1000 milliseconds) for each row
+                    });
                 })
                 .catch(error => console.error(error));
         </script>

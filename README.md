@@ -1,23 +1,15 @@
-# Python Simple Website
-
-This Repo should help you to get a simple Python website setup using the Flask framework. This is a great first project for new programmers.
+# FICC Tech Problem Statement - Forward Pricing Engine
 
 ## To-Do
-- ### Preparing for the Project
-  - [x] First ensure Python is installed 
-       - Run the command in Command Prompt (or any other shell) ```python --version```
-       - If not installed get it from [here](https://www.python.org/downloads/)
-  - [x] Ensure An IDE is installed (I have given popular ones below)
-       - [Visual Studio Code](https://code.visualstudio.com)   <-----  the one I use
+  - [x] Ensure Python is installed
+  - [x] Ensure An IDE is installed
+       - [Visual Studio Code](https://code.visualstudio.com)   <-----  we used
        - [Pycharm](https://www.jetbrains.com/pycharm/)
-       - [Jupyter Notebook](https://jupyter.org/install.html)
+       - [Jupyter Notebook](https://jupyter.org/install.html)  <-----  we used
                 
 ## Setting Up The Test Project
- - ### Ensure steps in [To-Do](https://github.com/amitojsingh366/python-simple-website#to-do) are completed
- - ### Downloading the test project code
-    - [x] Download the code from this repo
-       - Code can be downloaded from [here](https://github.com/amitojsingh366/python-simple-website/archive/main.zip) or by using the green button above
-       - Extract the zip file downloaded and place the extracted folder somewhere you can remember
+ - ### Ensure steps in [To-Do] are completed
+ - ### Download the project code
 - ### Running The Server
    - [x] Git clone the project(https://github.com/Eaint2000-droid/BofaCodeToConnect.git)
    - [x] Run the following command to get the dependencies (mainly `Flask`) installed
@@ -35,7 +27,7 @@ This Repo should help you to get a simple Python website setup using the Flask f
     - #### macOS instructions:
         - First locate the folder(project folder) you want to open in command line
         - Now right click on the folder and select the option `New Terminal at Folder` (It should be the last option on the list)
-        - Thats It! You now have the project folder open in command line! 
+        - Thats It! 
       
                        
     - #### Windows instructions:
@@ -43,12 +35,5 @@ This Repo should help you to get a simple Python website setup using the Flask f
         - Now while holding `shift` right click and select the option `Copy as path`
         - Now open any command line (Command Prompt, Poweshell, etc.) and run the following command:
             - `cd "YOUR COPIED PATH HERE"` replacing `"YOUR COPIED PATH HERE"` with the path that you copied before.
-        - Thats It! You now have the project folder open in command line! 
-        
-
-- ### Useful Links
-  - CSS: [W3Schools](https://www.w3schools.com/css/)
-  - HTML: [W3Schools](https://www.w3schools.com/html/)
-  - Python: [W3Schools](https://www.w3schools.com/python/)
-  - Flask: [Official Docs](https://flask.palletsprojects.com/en/1.1.x/)
+        - Thats It! 
 
